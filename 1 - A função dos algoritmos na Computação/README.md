@@ -10,4 +10,4 @@ Uma estrutura de dados é um meio para armazenar e organizar dados com o objetiv
 
 <h3>Explicação em vídeo</h3>
 
-[![Watch the video](https://i.imgur.com/vKb2F1B.png)](https://youtu.be/Xo1V_JL1yAg)
+https://youtu.be/Xo1V_JL1yAg
