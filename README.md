@@ -4,8 +4,10 @@ Este repositório tem como base os livros: Algoritmos e estruturas de dados do a
 <p>
 <p>
 
-![menu1](./imagens/nivio.png)<br>
-![menu1](./imagens/cormem.png)<br>
+![menu1](./imagens/cormem.jpeg)<br>
+
+<p>
+<p>
 
 <h3>1 - A função dos algoritmos na Computação </h3>
 
