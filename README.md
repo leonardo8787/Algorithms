@@ -1,8 +1,7 @@
 # Algorithms
 
-Este repositório tem como base os livros: Algoritmos e estruturas de dados do autor Thomas Cormem, e Projeto de algoritmos do Professor Níveio Ziviane.
-
-
+Este repositório tem como base os livros: Algoritmos e estruturas de dados do autor Thomas Cormem, e Projeto de algoritmos do Professor Níveio Ziviane. Foi feito por mim, <strong>Leonardo de Oliveira Campos</strong>, para melhorar o meu entendimento em relação a algoritmos e estruturas de dados. 
+<p>
 
 <h3>1 - A função dos algoritmos na Computação </h3>
 
