@@ -1,12 +1,18 @@
 # Algorithms
 
-Este repositório tem como base os livros: Algoritmos e estruturas de dados do autor Thomas Cormem, e Projeto de algoritmos do Professor Níveio Ziviane. Foi feito por mim, <strong>Leonardo de Oliveira Campos</strong>, para melhorar o meu entendimento em relação a algoritmos e estruturas de dados. 
+Este repositório tem como base o livro Algoritmos e estruturas de dados do autor Thomas Cormem. Foi feito por mim, <strong>Leonardo de Oliveira Campos</strong>, para melhorar o estudo em algoritmos e estruturas de dados. Em ciência da computação, um algoritmo é uma sequência finita de ações executáveis que visam obter uma solução para um determinado tipo de problema.
 <p>
 <p>
 
-![menu1](./imagens/cormem.jpeg)<br>
+<p align = "center">
+    <img src="https://github.com/leonardo8787/Algorithms/blob/main/imagens/cormem.jpeg" width="300"></img>
+</p>
 
 <p>
+<p>
+
+<p align = "center">
+  <h2>Sumário</h2>
 <p>
 
 <h3>1 - A função dos algoritmos na Computação </h3>
