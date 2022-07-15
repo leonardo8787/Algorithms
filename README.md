@@ -266,3 +266,10 @@ Este repositório tem como base o livro Algoritmos e estruturas de dados do auto
 
 
 
+<p align = "center">
+  <h2>Playslists de Algoritmos</h2>
+<p>
+
+canal: Carla quem disse!
+https://www.youtube.com/watch?v=_HBTCUNPxOg&list=PLncEdvQ20-mgGanwuFczm-4IwIdIcIiha
+
