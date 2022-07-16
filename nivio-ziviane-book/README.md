@@ -1,13 +1,5 @@
-<h1>O que são algoritmos?</h1>
+<h2>Repositório inspirado no livro Projeto de algoritmos</h2>
 
-Informalmente, um algoritmo é qualquer procedimento computacionai bem definido que 
-toma algum valor ou conjunto de valores como entrada e produz algum valor ou conjunto de valores como saúda. Portanto, um algoritmo é uma sequência de passos computacionais que transformam a entrada na saída. 
+O professor Nívio Ziviane foi muito feliz ao fazer este brilhante livro de algoritmos com implementações em Java e C++. Usou estas linguagens pois são orientadas a objetos e isto facilita o fracionamento do código e o bom intendimento do algoritmo, além de serem linguagens rápidas e eficientes ao se tratar de custo de execução, é obvio que a linguagem C é mais rápida e barata, ao falarmos de execução, do que Java e C++, entretanto não é tão didática quanto a essas pelo motivo supra-citado. Assim neste repositório buscarei resumir todo o livro e transcrever os códigos usados neste para o bom intendimento da matéria. 
 
-<h2>O que são estruturas de dados?</h2>
-
-Uma estrutura de dados é um meio para armazenar e organizar dados com o objetivo de facilitar o acesso e as modificações. Nenhuma estrutura de dados única funciona bem para todos os propósitos, e assim é importante conhecer os pontos fortes e as limitações de várias delas. 
-
-
-<h3>Explicação em vídeo</h3>
-
-https://youtu.be/Xo1V_JL1yAg
+O departamento de Ciência da Computação da Universidade Federal de Minas Gerais disponibilizou um site com todos os capítulos do livro no seguinte link: https://www2.dcc.ufmg.br/livros/algoritmos/index.php
