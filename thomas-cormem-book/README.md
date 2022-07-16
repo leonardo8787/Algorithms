@@ -1,13 +1,9 @@
-<h1>O que são algoritmos?</h1>
+<h2>Thomas Cormem - Algoritmos</h2>
 
-Informalmente, um algoritmo é qualquer procedimento computacionai bem definido que 
-toma algum valor ou conjunto de valores como entrada e produz algum valor ou conjunto de valores como saúda. Portanto, um algoritmo é uma sequência de passos computacionais que transformam a entrada na saída. 
+Antes de existirem computadores, havia algoritmos. Mas, agora que temos computadores, há ainda mais
+algoritmos, e os algoritmos estão no coração da computação. Este repositório é um estudo em cima do livro de algoritmos e estruturas de dados do autor Thomas Cormem. Neste repositório será apresentado muitos algoritmos e os examinaremos com considerável profundidade, embora torne seu projeto e sua análise acessíveis a leitores de
+todos os níveis. Tentamos manter as explicações em um nível elementar sem sacrificar a profundidade do enfoque ou o rigor matemático.
 
-<h2>O que são estruturas de dados?</h2>
-
-Uma estrutura de dados é um meio para armazenar e organizar dados com o objetivo de facilitar o acesso e as modificações. Nenhuma estrutura de dados única funciona bem para todos os propósitos, e assim é importante conhecer os pontos fortes e as limitações de várias delas. 
-
-
-<h3>Explicação em vídeo</h3>
-
-https://youtu.be/Xo1V_JL1yAg
+Cada capítulo apresenta um algoritmo, uma técnica de projeto, uma área de aplicação ou um tópico relacionado.
+Algoritmos são descritos em linguagem comum e em pseudocódigo projetado para ser fácil de ler por qualquer pessoa
+que tenha estudado um pouco de programação.
