@@ -139,3 +139,11 @@ Neste caso a função 10t*lg(n)+17t pode ser limitada por 10t*n+17t visto que n 
 Comparando a busca binária com a busca linear podemos perceber que a busca binária é melhor do que a busca linear visto que a busca binária tem crescimento logaritmico e a busca linear tem crescimento constante.
                               
 ![comparação de crescimento linear e logaritmico](https://s1.static.brasilescola.uol.com.br/be/e/Untitled-3(47).jpg)
+
+                              
+<h2>Notação Assintótica(Big O)</h2>
+
+É uma abstração que nos permite focar no que ocorre com f(n) quando n cresce indefinidamente. 
+* A menor ordem não importa. 
+* Constantes não importam.
+
