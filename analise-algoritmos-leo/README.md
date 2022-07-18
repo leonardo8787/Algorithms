@@ -106,3 +106,36 @@ r = quantidade de vezes que o teste da linha 3 executa.
 </table>
 
 Na busca linear, o tempo depende de onde está o elemento no vetor. Já no caso da busca binária, independentemente de onde esteja o elemento o custo vai ser o mesmo. 
+
+Se T(n) é o tempo de uma entrada qualquer de tamanho n, 
+~~~
+Tempo no melhor caso   <=   T(n)   <=    Tempo no pior caso 
+~~~
+Portanto esses tempos nos dão garantias.
+
+* 12t <= Tempo da busca linear <= 7tn+8t
+* 10t*lg(n)+7t  <=  Tempo da busca binária  <= 10t*lg(n)+17t
+
+<strong>Análise por casos</strong><p>
+ 
+Definição: O tempo de caso médio de um algoritmo é a média do tempo de execução de todas as instancias de tamanho n. Consideramos algo sobre a distribuição das entradas e fazemos uma análise probabilística. Pode ser tão ruim quanto o pior caso. Análises de caso médio costumam ser mais complicadas.
+ 
+ ~~~
+ enquanto i<= e A[i].chave != faça             
+ ~~~
+              
+ o caso médio do algoritmo de busca linear é atribuida pelo calculo médio de seu laço, sendo assim temos P(n/2), portanto o resultado do custo é (7tn+17t)/2.
+              
+<strong>Bons algoritmos</strong><p>
+ 
+ Definição: Um algoritmo é eficiente se seu tempo de execução no pior caso puder ser descrito por uma função que é limitada superiormente por uma função polinomial no tamanho da entrada.
+ 
+Testando para a busca binária temos:
+~~~
+ T(n)=10t*lg(n)+17t <= 10tn+17t
+~~~
+Neste caso a função 10t*lg(n)+17t pode ser limitada por 10t*n+17t visto que n é maior que lg(n), assim a busca binária é eficiente pois o pior caso é polinomial. 
+                              
+Comparando a busca binária com a busca linear podemos perceber que a busca binária é melhor do que a busca linear visto que a busca binária tem crescimento logaritmico e a busca linear tem crescimento constante.
+                              
+![comparação de crescimento linear e logaritmico](https://s1.static.brasilescola.uol.com.br/be/e/Untitled-3(47).jpg)
