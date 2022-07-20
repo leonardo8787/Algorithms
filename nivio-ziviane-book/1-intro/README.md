@@ -52,6 +52,103 @@ Qualquer algoritmo para encontrar o maior elemento de um conjunto com n elemento
 
 A medida do custo de custo de execução de um algoritmo depende principalmente do tamanho da entrada dos dados. Por isso, é comum considerar o tempo de execução de um programa como uma função do tamanho da entrada. Entretanto, para alguns algoritmos, o custo de execução é uma função da entrada particular dos dados, não apenas do tamanho da entrada. Como há a possibilidade do vetor estar ordenado no princípio da execução, assim o custo do software será menor,tendo isso em vista deve haver três possibilidades de custo para um algoritmo, sendo eles o melhor caso, o caso médio e o pior caso, que se trata da maior execução que o software enfrentará.
 
+O caso médio (ou caso esperado) corresponde à média dos tempos de execução de todas as entradas de tamanho n. Na análise do caso esperado, uma distribuição de probabilidades sobre o conjunto de entradas de tamanho n é suposta, e o custo médio é obitido com base nessa distribuição. Por essa razão, a análise do caso médio é geralmente muito mais difícil de obter do que as análises do melhor e do pior caso. É comum supor uma distribuição de probabilidades em que todas as entradas possíveis são igualmente prováveis. Entretanto, na prática isso nem sempre é verdade. Por isso, a análise do caso esperado dos algoritmos a serem estudados só será apresentada quando esta fizer sentido.
+
+ <strong>Um caso de melhora de um algoritmo:</strong> Algoritmo de busca.
+ 
+ <p align = "center">
+    <strong>melhor caso : f(n)=1</strong>
+</p>
+
+
+<p align = "center">
+    <strong>pior caso   : f(n)=n</strong>
+</p>
+
+
+<p align = "center">
+    <strong>caso médio  : f(n)=(n+1)/2</strong>
+</p>
+ 
+ ~~~
+ #ifndef MAXMIN1_H_
+ #define MAXMIN1_H_
+ 
+ namespace cap1 {
+    class MaxMin1 {
+       public:
+        static int *maxMin1(int v[], int n);
+    };
+    int* MaxMin::maxMin1(int v[], int n){
+        int max=v[0], min=v[0];
+        for(int i=1; i<n; i++){
+            if(v[i] > max) max = v[i];
+            if(v[i] < max) max = v[i];
+        }
+        int *maxMin=new int[2];
+        maxMin[0] = max;
+        maxMin[1] = min;
+        return maxMin;
+    }
+ }
+ 
+ #endif
+ ~~~
+ 
+ O programa pode ser facilmente melhorado. Basta observar que a comparação v[i] < min somente é necessária quando o resultado da comparação v[i] > max é falso. Uma nova versão do algoritmo pode ser vista no programa abaixo. Nessa implementação, os casos de execução são:
+ 
+ 
+<p align = "center">
+    <strong>melhor caso : f(n)=n-1</strong>
+</p>
+
+
+<p align = "center">
+    <strong>pior caso   : f(n)=2(n-1)</strong>
+</p>
+
+
+<p align = "center">
+    <strong>caso médio  : f(n)=3n/2-3/2</strong>
+</p>
+
+O melhor caso ocorre quando os elementos de v estão em ordem rescente. O pior caso ocorre quando os elementos de v estão em ordem decrescente. No caso médio, v[i] é maior do que max a metade das vezes. Logo,
+
+<p align = "center">
+    <strong>f(n) = n-1 + (n-1)/2 </strong>
+</p>
+<p align = "center">
+    <strong>f(n) = 3n/2 - 3/2 </strong>
+</p>
+ 
+ ~~~
+ 
+ #ifndef MAXMIN1_H_
+ #define MAXMIN1_H_
+ 
+ namespace cap1 {
+    class MaxMin1 {
+       public:
+        static int *maxMin1(int v[], int n);
+    };
+    int* MaxMin::maxMin1(int v[], int n){
+        int max=v[0], min=v[0];
+        for(int i=1; i<n; i++){
+            if(v[i] > max) max = v[i];
+            else if(v[i] < max) max = v[i];
+        }
+        int *maxMin=new int[2];
+        maxMin[0] = max;
+        maxMin[1] = min;
+        return maxMin;
+    }
+ }
+ 
+ #endif
+ ~~~
+
+O segundo algoritmo é melhor pelo fato de o custo de execução ter um leve declínio graças ao 'else' dentro do 'for', ele implica num menor custo mínimo e/ou médio de execução do algoritmo.
+
 <h2>Referências</h2>
 
 * Ricardo Baeza-Yates
