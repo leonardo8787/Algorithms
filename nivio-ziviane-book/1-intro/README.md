@@ -54,7 +54,7 @@ A medida do custo de custo de execução de um algoritmo depende principalmente 
 
 O caso médio (ou caso esperado) corresponde à média dos tempos de execução de todas as entradas de tamanho n. Na análise do caso esperado, uma distribuição de probabilidades sobre o conjunto de entradas de tamanho n é suposta, e o custo médio é obitido com base nessa distribuição. Por essa razão, a análise do caso médio é geralmente muito mais difícil de obter do que as análises do melhor e do pior caso. É comum supor uma distribuição de probabilidades em que todas as entradas possíveis são igualmente prováveis. Entretanto, na prática isso nem sempre é verdade. Por isso, a análise do caso esperado dos algoritmos a serem estudados só será apresentada quando esta fizer sentido.
 
- <strong>Um caso de melhora de um algoritmo:</strong> Algoritmo de busca.
+ <strong>Um caso de melhora de um algoritmo:</strong> Algoritmo de busca 1.1
  
  <p align = "center">
     <strong>melhor caso : f(n)=1</strong>
@@ -121,6 +121,8 @@ O melhor caso ocorre quando os elementos de v estão em ordem rescente. O pior c
     <strong>f(n) = 3n/2 - 3/2 </strong>
 </p>
  
+ Algoritmo de busca 1.2
+ 
  ~~~
  
  #ifndef MAXMIN1_H_
@@ -148,6 +150,10 @@ O melhor caso ocorre quando os elementos de v estão em ordem rescente. O pior c
  ~~~
 
 O segundo algoritmo é melhor pelo fato de o custo de execução ter um leve declínio graças ao 'else' dentro do 'for', ele implica num menor custo mínimo e/ou médio de execução do algoritmo.
+
+Considerando o número de comparações realizadas, existe a possibilidade de obter um algoritmo mais eficiente para este problema ? A resposta é sim. Considerando o seguinte algoritmo:
+
+1) Compare os elementos de v aos pares, separando-os em dois subconjuntos de acordo com o resultado da comparação, colocando os maiores em um subconjunto e os menores no outro, conforme mostrado no código 1.1 , a um custo de (n/2)² comparações.
 
 <h2>Referências</h2>
 
