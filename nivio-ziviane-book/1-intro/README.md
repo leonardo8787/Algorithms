@@ -206,7 +206,34 @@ Os elementos de v são comparados dois a dois, os elementos maiores  são compar
 
 <strong>Comparação de algoritmos para obter o máximo e o mínimo de uma sequência</strong>
 
+<table>
+ <tr>
+  <th>Algoritmos</th>
+  <th>Melhor caso</th>
+  <th>Pior caso</th>
+  <th>Caso médio</th>
+ </tr>
+  <tr>
+      <td>MaxMin 1</td>
+  <th>2(n-1)</th>
+  <th>n-1</th>
+  <th>3n/2 - 2</th>
+ </tr>
+  <tr>
+      <td>MaxMin 2</td>
+  <td>2(n-1)</td>
+  <td>2(n-1)</td>
+  <td>3n/2 - 2</td>
+ </tr>
+  <tr>
+       <td>MaxMin 3</td>
+  <td>2(n-1)</td>
+  <td>3n/2 - 3/2</td>
+  <td>3n/2 - 2</td>
+ </tr>
+</table>
 
+<h2>Comportamento Assintótico de Funções<h2>
 
 <h2>Referências</h2>
 
