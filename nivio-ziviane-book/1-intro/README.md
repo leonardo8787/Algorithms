@@ -154,6 +154,59 @@ O segundo algoritmo é melhor pelo fato de o custo de execução ter um leve dec
 Considerando o número de comparações realizadas, existe a possibilidade de obter um algoritmo mais eficiente para este problema ? A resposta é sim. Considerando o seguinte algoritmo:
 
 1) Compare os elementos de v aos pares, separando-os em dois subconjuntos de acordo com o resultado da comparação, colocando os maiores em um subconjunto e os menores no outro, conforme mostrado no código 1.1 , a um custo de (n/2)² comparações.
+2) O máximo é obitido do subconjunto que contém os maiores elementos, a um custo de (n/2)-1 comparações.
+3) O mínimo é obtido do subconjunto que contém os menores elementos, a um custo de (n/2)-1 comparações.
+
+Implementação 1.4, melhor para obter máximo e mínimo.
+
+~~~
+ #ifndef MAXMIN1_H_
+ #define MAXMIN1_H_
+ 
+ namespace cap1 {
+    class MaxMin1 {
+       public:
+        static int *maxMin3(int v[], int n);
+    };
+    int* MaxMin::maxMin1(int v[], int n){
+        int max, min, FimDoAnel;
+        if((n%2)>0){v[n]=v[n-1]; FimDoAnel=n;}
+        else FimDoAnel=n-1;
+        if(v[0]>v[1]){ max=v[0]; min=v[1]}
+        else { max=v[1]; min=v[0];}
+        int i=2;
+        while(i<FimDoAnel){
+            if(v[i]>v[i+1]){
+                if(v[i] > max) max=v[i];
+                if(v[i-1] < min) min=v[i+1];
+            }
+            else {
+                if(v[i] < min) min = v[i];
+                if(v[i-1] > max) max = v[i+1];
+            }
+            i=i+2;
+        }
+        int *maxMin = new int[2];
+        maxMin[0] = max; maxMin[1] = min;
+        return maxMin;
+    }
+ }
+ 
+ #endif
+~~~
+
+Os elementos de v são comparados dois a dois, os elementos maiores  são comparados com max e os elementos menores são comparados com min. Quando n é ímpar, o elemento que está na posição v[n-1] é duplicado na posição v[n] para evitar um tratamento de exceção. Para issa implementação,
+
+<p align = "center">
+    <strong>f(n) = n/2 + (n-2)/2 + (n-2)/2 </strong>
+</p>
+<p align = "center">
+    <strong>f(n) = 3n/2 - 2 </strong>
+</p>
+
+<strong>Comparação de algoritmos para obter o máximo e o mínimo de uma sequência</strong>
+
+
 
 <h2>Referências</h2>
 
