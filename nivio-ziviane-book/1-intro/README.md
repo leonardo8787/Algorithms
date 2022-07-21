@@ -233,7 +233,12 @@ Os elementos de v são comparados dois a dois, os elementos maiores  são compar
  </tr>
 </table>
 
-<h2>Comportamento Assintótico de Funções<h2>
+<h2>Comportamento Assintótico de Funções</h2>
+
+Uma função f(n) domina assintoticamente outra função g(n) se existem duas constantes positivas 'c' e 'm' tais que, para n >= m, temos |g(n)| <= c*|f(n)|.
+
+![domínio assintótico de uma função sobre outra](
+https://th.bing.com/th/id/R.cf5ceaa0088f6eaccaba71e18015149b?rik=6w%2fIJrETQWVL5A&riu=http%3a%2f%2fwww.wdz.eng.br%2fWDK%2fDominioAssintotico.jpg&ehk=rIg5YpUz6BgHSxMxI02XouWJO1diV4XzJxZBj5vejPU%3d&risl=&pid=ImgRaw&r=0)
 
 <h2>Referências</h2>
 
