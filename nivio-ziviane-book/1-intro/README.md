@@ -240,6 +240,18 @@ Uma função f(n) domina assintoticamente outra função g(n) se existem duas co
 ![domínio assintótico de uma função sobre outra](
 https://th.bing.com/th/id/R.cf5ceaa0088f6eaccaba71e18015149b?rik=6w%2fIJrETQWVL5A&riu=http%3a%2f%2fwww.wdz.eng.br%2fWDK%2fDominioAssintotico.jpg&ehk=rIg5YpUz6BgHSxMxI02XouWJO1diV4XzJxZBj5vejPU%3d&risl=&pid=ImgRaw&r=0)
 
+<strong>Definição notação Big O</strong>
+
+Usamos a notação big-Θ para limitar de forma assintótica o crescimento do tempo de execução com fatores constantes acima e abaixo. Algumas vezes, vamos querer limitar somente acima. Por exemplo, embora o tempo de execução do pior caso da busca binária seja (log_2 n), seria incorreto dizer que a busca binária é executada em O(log_2 n) em todos os casos. E se encontrarmos o valor procurado no primeiro chute? Então o programa é executado em O(1). O tempo de execução da busca binária nunca é pior que O(log_2 n), mas algumas vezes ele é melhor.
+
+Seria conveniente ter uma forma de notação assintótica que diga "o tempo de execução cresce no máximo até um determinado valor, mas poderia crescer mais devagar". A notação "big-O" serve para essas ocasiões. Se um tempo de execução é O(f(n)), então para um f(n) suficientemente grande , o tempo de execução é no máximo k f(n)k⋅f(n)k, para alguma constante k. Veja como pensar em um tempo de execução que é O(f(n)):
+
+![big O](https://i.stack.imgur.com/WcBRI.png)
+
+Dizemos que o tempo de execução é "big-O de f(n)" ou apenas "O de f(n)" Usamos a notação big-O para limites assintóticos superiores, uma vez que ela limita o crescimento do tempo de execução superior para valores sufientemente grandes de entrada. Agora temos uma forma de caracterizar o tempo de execução da busca binária em todos os casos. Podemos dizer que o tempo de execução da busca binária é sempre O(log_2 n). Podemos fazer uma afirmação mais forte sobre o tempo de execução no pior caso: ele é O(log_2 n). No entanto, se quisermos cobrir todos os casos, a afirmação mais forte que podemos fazer é que a busca binária executa em tempo O(log_2 n).
+
+
+
 <h2>Referências</h2>
 
 * Ricardo Baeza-Yates
