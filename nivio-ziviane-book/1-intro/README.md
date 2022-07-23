@@ -256,6 +256,51 @@ Dizemos que o tempo de execução é "big-O de f(n)" ou apenas "O de f(n)" Usamo
 
 <strong>Definação notação Theta</strong>
 
+<h3>Resumo</h3>
+
+* <strong>Big O:</strong> Descreve o limite superior da complexidade.
+* <strong>Omega Ω:</strong> Descreve o limite inferior da complexidade.
+* <strong>Theta Θ:</strong> Descreve o limite exato da complexidade.
+* <strong>Little O:</strong> Descreve o limite superior excluindo o limite exato.
+
+![relações de complexidade](https://www.freecodecamp.org/portuguese/news/content/images/2021/12/1_O-dcXbYXojkAPEnDuVZMvA.png)
+
+<h3>Comparação de complexidade entre Big Os típicas</h3>
+
+Quando tentamos descobrir a Big O para uma função g(n) específica, nos preocupamos apenas com o termo dominante da função. O termo dominante é o termo que cresce mais rápido. Por exemplo, n² cresce mais rápido que n. Assim, se tivermos algo como g(n)=n²+5n+6, teremos uma big O(n²). Se você já fez cálculo no passado, isso é muito semelhante a achar o atalho para encontrar limites para polinômios fracionários, onde você só se importa com o termo dominante para numeradores e denominadores no fim.
+
+![](https://www.freecodecamp.org/portuguese/news/content/images/2021/12/0_MPwgKd4lgXACfuNt.png)
+
+Mas qual função cresce mais rápido do que as outras ? Existem, de fato, algumas regras.
+
+![](https://www.freecodecamp.org/portuguese/news/content/images/2021/12/1_KfZYFUT2OKfjekJlCeYvuQ.jpeg)
+
+<strong>O(1) tem a menor complexidade</strong><p>
+Geralmente chamado de "tempo constante", se você pode criar um algoritmo para resolver o problema em O(1), isso é normalmente o melhor que você pode conseguir. Em alguns cenários, a comlexidade ode passar de O(1), então podemos analisá-la encontrando sua contrapartida O(1/g(n)). Po exemplo, O(1/n) é mais complexo do que O(1/n²).
+
+<strong>O(log(n)) é mais complexo do que O(1), mas menos complexo do que polinômios</strong><p>
+Como a complexidade geralmente está associada a algoritmos de dividir e conquistar, O(log(n)) costuma ser uma complexidade boa que você pode alcançar em algoritmos de ordenação. O(log(n)) é menos complexo que O(sqrt(n)) costuma ser uma complexidade boa que você pode alcançar em algoritmos de ordenação. O(log(n)) é menos complexo que O(sqrt(n)), pois a função da raiz quadrada pode ser considerada um polinômio, onde o expoente é 0,5.
+
+<strong>A complexidade dos polinômios aumenta de acordo com o aumento do expoente</strong><p>
+Por exemplo, O(n^5) é mais complexo que O(n^4). Devido à simplicidade disso, passamos por vários exemplos de polinômios nas seções anteriores.
+
+<strong>Exponenciais têm maior complexidade do que polinômios, contanto que os coeficientes sejam múltiplos positivos de n</strong><p>
+O(2^n) é mais complexo que O(n^99), mas O(2^n) é, de fato, menos complexo que O(1). 
+
+<strong>Fatoriais têm complexidade maior do que exponenciais</strong>
+Se tiver interesse no motivo para isso, consulte a função gama, que é uma extensão analítica de um fatorial. Uma pequena prova disso é que fatoriais e exponenciais têm o mesmo número de multiplicações, mas os números que são multiplicados crescem para os fatoriais, mas permanecem constantes para os exponenciais.
+
+<h2>Complexidade de espaço e de tempo</h2>
+Até o momento, só discutimos a complexidade de tempo dos algoritmos. Ou seja, só nos preocupamos com o tempo que leva para o programa completar a tarefa. O que também importa é o espaço que o programa leva para completar a tarefa. A complexidade de espaço é relacionada com o quanto de memória o programa usará e, portanto, também é um fator importante a ser analisado.
+
+A complexidade de espaço funciona de modo semelhante à complexidade de tempo. Por exemplo, a selection sort tem uma complexidade de espaço de O(1), porque ela somente armazena um valor mínimo e seu índice para comparação, o espaço máximo usado não aumenta com o tamanho da entrada.
+
+Alguns algoritmos, como a bucket sort, tem uma complexidade de espaço de O(n), mas pode reduzir a complexidade de tempo para O(1). A bucket sort ordena o array criando uma lista ordenada de todos os elementos possíveis no array, depois incrementa o contador sempre que um elemento é encontrado. No fim, o array ordenado serão os elementos da lista ordenada repetidos por suas contagens.
+
+<strong>Bucket Sort Visualized</strong>
+
+![](https://www.freecodecamp.org/portuguese/news/content/images/2021/12/1_GfLWx2TXS55unwqZ5-X26w.png)
+
 <h2>Classes de comportamento assintótico</h2>
 
 <h2>Técnicas de análise de algoritmos</h2>
