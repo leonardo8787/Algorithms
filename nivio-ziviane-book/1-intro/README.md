@@ -250,7 +250,15 @@ Seria conveniente ter uma forma de notação assintótica que diga "o tempo de e
 
 Dizemos que o tempo de execução é "big-O de f(n)" ou apenas "O de f(n)" Usamos a notação big-O para limites assintóticos superiores, uma vez que ela limita o crescimento do tempo de execução superior para valores sufientemente grandes de entrada. Agora temos uma forma de caracterizar o tempo de execução da busca binária em todos os casos. Podemos dizer que o tempo de execução da busca binária é sempre O(log_2 n). Podemos fazer uma afirmação mais forte sobre o tempo de execução no pior caso: ele é O(log_2 n). No entanto, se quisermos cobrir todos os casos, a afirmação mais forte que podemos fazer é que a busca binária executa em tempo O(log_2 n).
 
+<strong>Definição notação small O</strong>
 
+<strong>Definação notação Ômega</strong>
+
+<strong>Definação notação Theta</strong>
+
+<h2>Classes de comportamento assintótico</h2>
+
+<h2>Técnicas de análise de algoritmos</h2>
 
 <h2>Referências</h2>
 
