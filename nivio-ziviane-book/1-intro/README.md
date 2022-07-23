@@ -301,6 +301,14 @@ Alguns algoritmos, como a bucket sort, tem uma complexidade de espaço de O(n), 
 
 ![](https://www.freecodecamp.org/portuguese/news/content/images/2021/12/1_GfLWx2TXS55unwqZ5-X26w.png)
 
+Nem sempre um algoritmo irá iterar muitas vezes para poder encontrar uma resposta para um cálculo computacional, as vezes em uma única iteração o algoritmo já encontra a resposta a que procura, outras vezes é necessário um grande número de iterações, abaixo é mostrado um cheatsheet dos custos que envolvem alguns algoritmos famosos no mundo da computação:
+
+![](https://www.freecodecamp.org/portuguese/news/content/images/2021/12/0_XZsrnwao98R3dGTB.png)
+
+Finalmente, podemos classificar as funções da mais complexa para a menos complexa.
+
+![](https://www.freecodecamp.org/portuguese/news/content/images/2021/12/1_NHVggTVMGjGOe7SxtSgIpQ.png)
+
 <h2>Classes de comportamento assintótico</h2>
 
 <h2>Técnicas de análise de algoritmos</h2>
@@ -310,3 +318,7 @@ Alguns algoritmos, como a bucket sort, tem uma complexidade de espaço de O(n), 
 * Ricardo Baeza-Yates
 Santiago, Chile, Dezembro de 2003
 Barcelona, Espanha, Junho de 2010
+
+* Projeto de Algoritmos, Nívio Ziviani
+
+* blog freecodecamp
