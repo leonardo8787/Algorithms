@@ -252,9 +252,21 @@ Dizemos que o tempo de execução é "big-O de f(n)" ou apenas "O de f(n)" Usamo
 
 <strong>Definição notação small O</strong>
 
+Little O (o ()) descreve o limite superior excluindo o limite exato.
+
 <strong>Definação notação Ômega</strong>
 
+Assim como na Notação O, estamos interessados em inferir o crescimento do tempo/espaço de execução de um determinado algoritmo. No entanto, ao invés de olharmos para uma função que é o limite superior do algoritmo estudado, estamos olhando o limite inferior. Essa é a grande diferença. Assim, quando uma função f(n) é limitada inferiormente por outra função g(n), dizemos que a complexidade de tempo/espaço de f(n) é Ω( g(n) ). Ou seja, com limite inferior em g(n). E o que isto significa na prática? Significa que a função f(n) nunca será mais rápida (menor) do que a função g(n). Esta é a interpretação da Notação Ω.  Assim como apresentado na imagem acima onde cg(n) é o limite inferior de f(n). Um exemplo prático disso seria qualquer algoritmo de ordenação. No geral, os melhores algoritmos de ordenação tem complexidade média em O(n log n). No entanto, podemos afirmar também que qualquer algoritmo de ordenação será Ω(n), pois até hoje não há uma solução de ordenação que no mínimo, não seja obrigada a visitar todos os n elementos a serem ordenados ao menos uma vez. Logo, limitados inferiormente por Ω(n). Nunca mais rápidos ou eficientes do que isto. De forma muito parecida com a definição formal da Notação O, a Notação ômega trabalha com os limites de uma função em relação à outra. Neste caso, o limite inferior. Podemos interpretar então como: a função f(n) cresce no mínimo na ordem de g(n) para qualquer valor da entrada n que seja maior ou igual a n0. 
+
 <strong>Definação notação Theta</strong>
+
+Quando falamos em Notação Θ, estamos falando simultaneamente das notações O e Ω, pois a Notação Theta descreve o comportamento assintótico de funções definindo ao mesmo tempo um limite superior e um limite inferior para a execução de um determinado algoritmo. 
+
+![](https://notesformsc.org/wp-content/uploads/2018/07/Theta-Notation.png)
+
+Por exemplo na figura acima temos um algoritmo representado pela função f(n) sendo analisado e temos que ele é Θ( g(n) ), pois a função g(n) limita f(n) por cima e por baixo por apenas deslocando a função g(n) através das constantes c1 e c2. Iremos compreender isto melhor neste artigo. Mas até aqui, o importante é entender que Θ( g(n) ) é a interseção entre O( g(n) ) e Ω( g(n) ). Vamos tomar como exemplo o algoritmo Merge Sort. O pior caso de sua execução é tanto O(n log n) quanto Ω(n log n). Logo, podemos afirmar ele é Θ(n log n). No entanto, nós podemos afirmar também que este algoritmo é O(n²), uma vez que n² é assintoticamente maior (está acima) do que n log n. Por outro lado, não podemos dizer que ele seja Ω(n²). Logo, ele não é Θ(n²). Ou seja, n² é um limite superior mas não um limite inferior, portante não satisfaz a notação Θ.
+
+A notação theta  é uma espécie de junção das notações O e ômega. Ao invés de utilizarmos uma constante c1, agora utilizaremos duas constantes: c1 e c2. Essas constantes mostram como apenas deslocando a curva no gráfico conseguimos ver que uma função é ao mesmo tempo os limites superiores e inferiores da função estuda. Formalmente falando, temos que:
 
 <h3>Resumo</h3>
 
