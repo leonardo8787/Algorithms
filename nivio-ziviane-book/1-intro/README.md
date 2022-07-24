@@ -323,6 +323,33 @@ Finalmente, podemos classificar as funções da mais complexa para a menos compl
 
 <h2>Classes de comportamento assintótico</h2>
 
+Se f é uma função de complexidade para um algoritmo F, então O(f) é considerada a complexidade assintótica ou o comportamento assintótico do algoritmo F. Igualmente, se g é uma função para um algoritmo G, então O(G) é considerada a complexidade assintótica do algoritmo G. A relação de dominação assintótica permite comparar funções de complexidade. Entretanto, se as funções f e g dominam assintoticamente uma à outra, então os algoritmos associados são equivalentes. Nesses casos, o comportamento assintóticonão não serve para comparar os algoritmos. Por exemplo, dois algoritmos F e G aplicados à mesma classe de problemas, sendo que F leva três vezes o tempo de G ao ser executado, isto é, f(n)=3*g(n),sendo que O(f(n))=O(g(n)). Logo, o comportamento assintótico não serve para comparar os algoritmos F e G, porque eles diferem por uma constante.
+
+Programas podem ser avaliados por meio da comparação de suas funções de complexidade, negligenciando as constantes desses, entretanto, as constantes de proporcionalidade em cada caso podem alterar essa consideração. Por exemplo, é possível que um programa leve 100n unidades de tempo para ser executado, enquanto outro leve 2n² unidades de tempo. Quando dos dois programas é melhor?
+
+A resposta a essa pergunta depende do tamanho do problema a ser executado. Para problemas de tamanho n<50, o programa com tempo de execução 2n² é melhor do que o programa com tempo de execução 100n. Para problemas com entrada de dados pequena é preferível usar o programa cujo tempo de execução é O(n²). Entretanto, quando n cresce, o programa com tempo O(n²) leva muito mais tempo que o programa O(n).
+
+A maioria dos algoritmos possui um parâmetro que afeta o tempo de execução de forma mais significativa, usualmente o número de itens a ser processado. Esse parâmetro pode ser o número de registros de um arquivo a ser ordenado ou o número de nós de um grafo. As principais classes de problemas possuem as funções de complexidade descritas a seguir.
+
+1.
+
+2.
+
+3.
+
+4.
+
+5.
+
+6.
+
+7.
+
+8.
+
+
+
+
 <h2>Técnicas de análise de algoritmos</h2>
 
 <h2>Referências</h2>
