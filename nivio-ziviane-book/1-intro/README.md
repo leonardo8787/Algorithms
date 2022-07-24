@@ -352,6 +352,18 @@ Um algoritmo é considerado intratável quando ele é tão difícil que não exi
 
 <h2>Técnicas de análise de algoritmos</h2>
 
+1. O tempo de execução de um comando de atribuição, de leitura ou de escrita pode ser considerado como O(1). Existem exeções para as linguagens que permitem a chamada de funções em comandos de atribbuição, ou quando atribuições envolvem vetores de tamanho arbitrariamente grande.
+
+2. O tempo de exeção de uma sequência de comandos é determinado pelo maior tempo de execução de qualquer comando da sequência.
+
+3. O tempo de execução de um comando de decisão é composto pelo tempo de execução dos comandos executados dentro do comando condicional mais o tempo para avaliar a condição, que é O(1).
+
+4. O tempo para executar um anel é a soma do tempo de execução do corpo do anel mais o tempo de avaliar a condição para terminação multiplicado pelo número de iterações do anel. Geralmente, o tempo para avaliar a condição para terminação é O(1).
+
+5. Quando o programa possui procedimentos não recursivos, o tempo de execução de cada procedimento deve ser computado separadamente, um a um, iniciando com os procedimentos que não chamam outros procedimentos. A seguir, devem ser avaliados os procedimentos que chamam os procedimentos que não chamam outros procedimentos, utilizando os tempos dos procedimentos já avaliados. Esse processo é repetido até chegar ao programa principal.
+
+6. Quando o programa possui procedimentos recursivos, a cada procedimento é associada uma função de complexidade f(n) desconhecida, na qual n mede o tamanho dos argumentos para o procedimento.
+
 <h2>Referências</h2>
 
 * Ricardo Baeza-Yates
