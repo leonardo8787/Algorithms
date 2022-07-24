@@ -331,23 +331,23 @@ A resposta a essa pergunta depende do tamanho do problema a ser executado. Para 
 
 A maioria dos algoritmos possui um parâmetro que afeta o tempo de execução de forma mais significativa, usualmente o número de itens a ser processado. Esse parâmetro pode ser o número de registros de um arquivo a ser ordenado ou o número de nós de um grafo. As principais classes de problemas possuem as funções de complexidade descritas a seguir.
 
-1.
+1. f(n)=O(1). Algoritmos de complexidade <strong>O(1)</strong> são ditos de complexidade constante. O uso do algoritmo independente do tamanho de n. Nesse caso, as instruções do algoritmo são executadas um número fixo de vezes.
 
-2.
+2. f(n)=O(log n). Um algoritmo de complexidade <strong>O(log n)</strong> é dito de complexidade logarítmica. Esse tempo de execução ocorre tipicamente em algoritmos que resolvem um problema transformando-o em problemas menores. Nesses casos, o tempo de execução pode ser considerado como menor do que uma constante grande. Quando n é mil e a base do logaritmo é 2, log_2 n = 10, quando n é 1 milhão, log_2 n = 20. Para dobrar o valor de log n temos de considerar o quadrado de n. A base do logaritmo muda pouco esses valores: quando n é 1 milhão, o log_2 n é 20 e log_10 n é 6.
 
-3.
+3. f(n)=O(n). Um algoritmo de complexidade <strong>O(n)</strong> é dito de complexidade linear. Em geral, um pequeno trabalho é realizado sobre cada elemento de entrada. Essa é a melhor situação possível para um algoritmo que tem de processar n elementos de entrada ou produzir n elementos de saída. Cada vez que n dobra de tamanho, o tempo de execução também dobra.
 
-4.
+4. f(n)=O(n log n). Esse tempo de execução - <strong>(n*log n)</strong> - ocorre tipicamente em algoritmos que resolvem um problema quebrando-o em problemas menores, resolvendo cada um deles independentemente e depois juntando as soluções. Quando n é 1 milhão e a base do logaritmo é 2, n*log_2 n é cerca de 20 milhões. Quando n é 2 milhões, n*log_2 n é cerca de 42 milhões, pouco mais do que o dobro. 
 
-5.
+5. f(n)=O(n²). Um algoritmo de complexidade <strong>O(n²)</strong> é dito de complexidade quadrática. Algoritmos dessa ordem de complexidade ocorrem quando os itens de dados são processados aos pares, muitas vezes em um anel dentro de outro. Quando n é mil, o número de operações é da ordem de 1 milhão. Sempre que n dobra, o tempo de execução é multiplicado por 4. Algoritmos desse tipo são úteis para resolver problemas de tamanhos relativamente pequenos.
 
-6.
+6. f(n)=O(n³). Um algoritmo de complexidade <strong>O(n³)</strong> é dito de complexidade cúbica. Algoritmos dessa ordem de complexidade geralmente não são úteis do ponto de vista prático. Algoritmos dessa ordem de complexidade são úteis apenas para resolver pequenos problemas. Quando n é 100, o número de operações é da ordem de 1 milhão. Sempre que n dobra, o tempo de execução fica multiplicado por 8.
 
-7.
+7. f(n)=O(2^n). Um algoritmo de complexidade <strong>O(2^n)</strong> é dito de complexidade exponencial. Algoritmos dessa ordem de complexidade geralmente não são úteis do ponto de vista prático. Eles ocorrem na solução de problemas quando se usa força bruta para resolvê-los. Quando n é 20, o tempo de execução é cerca de 1 milhão. Quando n dobra, o tempo de execução fica elevado ao quadrado.
 
-8.
+8. f(n)=O(n!). Um algoritmo de complexidade <strong>O(n!)</strong> é também dito de complexidade exponencial, apesar de a complexidade fatorial O(n!) ter comportamento  muito pior do que a complexidade O(2^n). Algoritmos dessa ordem de complexidade geralmente ocorrem na solução de problemas quando se usa força bruta para resolvê-los. Quando n é 20, 20! = 2432902008176640000, um número com 19 dígitos. Quando n é 40, 40! = 815915..., um número de 48 dígitos.
 
-
+Um algoritmo é considerado intratável quando ele é tão difícil que não existe um algoritmopolinomial para resolvê-lo, enquanto um problema é considerado bem resolvido quando existe um algoritmo polinomial para resolvê-lo.
 
 
 <h2>Técnicas de análise de algoritmos</h2>
