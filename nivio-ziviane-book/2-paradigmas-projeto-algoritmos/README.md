@@ -32,13 +32,40 @@ Um método que chama a si mesmo, direta ou indiretamente, é dito recursivo. O u
 
 <strong>Exemplo:</strong> Considere a árvore binária de pesquisa mostrada na Figura 2.1. <strong>árvore binária de pesquisa</strong> é uma árvore binária em que todo nó interno contém um registro com a seguinte propriedade: todos os registros com chaves menores estão na subárvore esquerda e todos os registros com chaves maiores estão na subárvore direita.
 
-![Figura 2.1](https://www.wikiwand.com/pt/%C3%81rvore_bin%C3%A1ria_de_busca)
+![Figura 2.1](https://upload.wikimedia.org/wikipedia/commons/thumb/d/da/Binary_search_tree.svg/400px-Binary_search_tree.svg.png)
 
 O programa 2.1 mostra a estrutura de dados para a árvore da Figura 2.1.
 
 ~~~
+private static class No {
+  Object reg;
+  No esq, dir;
+}
+~~~
+
+Vamos considerar um algoritmo para percorrer todos os registros que compõem a árvore. Existe mais de uma ordem de caminhamento em árvores, mas a mais utilizada para árvores de pesquisa é a chamada ordem de caminhamento central. Esse caminhamento é melhor expresso em termos recursivos, a seber: 
+
+1. caminha na subárvore esquerda na ordem central;
+2. visita a raiz;
+3. caminha na subárvore direita na ordem central.
+
+O programa 2.2 mostra o método central da classe ArvoreBinaria apresentada no Programa 2.1, o qual implementa o caminhamento central de forma recursiva. No caminhamento central, os nós são visitados em ordem lexicográfica das chaves. Percorrer a árvore da Figura 2.1 usando caminhamento central recupera as chaves na ordem 1,2,3,4,5,6 e 7.
 
 ~~~
+private void central (No p){
+  if (p != null) {
+    central (p.esq);
+    System.out.println(p.reg.toString);
+    central(p.dir);
+  }
+}
+~~~
+
+Quando o método central é chamado com o valor do objeto de referência p referenciado o nó raiz da árvore, o primeiro comando verifica a condição de terminação, perguntando se p != null. Se for diferente de null, então central é chamado recursivamente seguindo a referência ao filho à esquerda, até encontrar uma referência null. Quando encontra p==null, o método simplesmente retorna para quem chamou, no caso central, e o comando seguinte é executado, imprimindo o valor de chave que rotula o nó. No caso de ser a primeira vez que p==null, o valor 1 é impresso, e central é chamado recursivamente, seguindo a referência ao filho à direita.
+
+<h2>Como implementar Recursividade</h2>
+
+
 
 <h2>Referências</h2>
 
