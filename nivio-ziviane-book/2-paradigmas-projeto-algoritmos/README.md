@@ -124,6 +124,94 @@ if (n<2) return n;
 else return (fibRec (n-1) + fibRec (n-2));
 ~~~
 
+Se considerarmos que a medida de complexidade de tempo f(n) é o número de adições, e o número de chamadas recursivas é O(Φ^n), o número de chamadas colocadas na pilha de recursão é linear, pois equivale a um caminho na árvore de recursividade que vai do nó raiz até um nó folha. Como a árvore de recursividade tem O(Φ^n) nós, e esse caminho tem comprimento igual a altura da árvore, então a complexidade de espaço para calcular f(n) pelo programa 2.3 é O(log Φ^n) = O(n), pois cada chamada recursiva é empilhada e esse número é O(n).
+
+O programa 2.4 apresenta uma versão iterativa para calcular f(n), de acordo com o esquema 2.3.
+
+Programa 2.4 Método iterativo para calcular números de Fibonacci.
+~~~
+int i=0, f=0;
+for(int k=1; k<=n;k++){
+  f=i+f;
+  i=f-i;
+}
+~~~
+
+O programa 2.4 tem complexidade de tempo O(n) e complexidade de espaço O(1). Tabela de comparação das estruturas 2.1:
+
+  <table>
+   <tr>
+    <th>n</th>
+    <th>10</th>
+    <th>20</th>
+    <th>30</th>
+    <th>50</th>
+    <th>100</th>
+   </tr>
+    <tr>
+    <td>fibRec</td>
+    <td>8 ms</td>
+    <td>1 s</td>
+    <td>2 min</td>
+    <td>21 dias</td>
+    <td>10^9 anos</td>
+   </tr>
+    <tr>
+    <td>MfibIter</td>
+    <td>1/6 ms</td>
+    <td>1/3 ms</td>
+    <td>1/2 ms</td>
+    <td>3/4 ms</td>
+    <td>1,5 ms</td>
+   </tr>
+  </table>
+  
+ <h2>Algoritmos Tentativa e Erro</h2>
+ 
+ A recursividade pode ser usada para resolver problemas cuja solução é tentar todas as alternativas possíveis. A idéia para algoritmos <strong>tentativa e erro</strong> é decompor o processo em um número finito de subtarefas parciais que devem ser exploradas exaustivamente. O processo geral pode ser visto como um processo de pesquisa ou tentativa que gradualmente constrói e percorre uma árvore de subtarefas conforme mostrado na Figura 2.2. Os algoritmos tentativa e erro não seguem regra fixa de computação, e funcionam da seguinte maneira:
+ 
+<p align = "center">
+    <img src="https://algoritmosempython.com.br/images/algoritmos-python/estruturas-dados/Arvore.png" width="200"></img>
+    
+* Passos em direção à solução final são tentados e registrados;
+* Caso esses passos tomados não levem à solução final, eles podem ser retirados e apagados do registro.
+
+Muitas vezes, a pesquisa na árvore de soluções cresce rapidamente; outras vezes, exponencialmente. Nesses casos, a pesquisa na árvore tem de usar <strong>algoritmos aproximados ou heurísticas</strong>, que não garantem a solução ótimo, mas são rápidos. 
+
+<strong>Exemplo:</strong> Passeio do cavalo no tabuleiro de xadrez.
+
+Um caminho para resolver o problema é considerar a possibilidade de realizar o próximo movimento ou verificar que ele não é possível. O Programa 2.5 apresenta um primeiro refinamento do algoritmo que tenta um próximo movimento.
+
+Programa 2.5 Tenta um próximo movimento
+~~~
+do {
+  inicializa seleção de movimentos;
+  if (aceitável) {
+    registra movimento;
+    if (tabuleiro não está cheio) {
+      tenta novo movimento; // Chamada recursiva para tentar
+      if (não sucedido) apaga registro anterior;
+    }
+  } while (movimento não sucedido e não acabaram candidatos a movimento);
+}
+~~~
+
+O tabuleiro pode ser representado por uma matriz n*n. A situação de cada posição do tabuleiro pode ser representada por um inteiro para recordar a história das ocupações:
+
+* t[x,y] = 0 campo <x,y> não visitado,
+* t[x,y] = i campo <x,y> visitado no i-ésimo movimento, 1<=i<=n^2.
+
+As regras do xadrez para os movientos do cavalo podem ser vistas na Figura 2.3. A partir de um ponto de partida x,y existem oito pontos de destino possíveis: o primeiro ponto é obtido somando 2 à abscissa x e 1 à ordenada y, o segundo somando 1 à abscissa x e 2 à ordenada y, e assim sucessivamente.
+
+<p align = "center">
+    <img src="https://www.soxadrez.com.br/conteudos/movimentos/figuras/tabcavalo.gif" width="200"></img>
+
+O software que resolve o movimento do cavalo pelo tabuleiro é encontrado na pasta código neste repositório.
+
+<h2>Divisão e Conquista</h2>
+
+
+
 <h2>Referências</h2>
 
 * Projeto de Algoritmos, Nivio Ziviani.
