@@ -3,5 +3,5 @@
 O algoritmo iterativo é ideal para resolver problemas que envolvam o cálculo de Fibonacci visto que seu custo computacional é constante, sendo portanto melhor que o algoritmo recursivo.
 
 * Big O(n)
-* Alfa(n/2)
-* Ômega(1/2)
+* Alfa(n+5)
+* Ômega((n+6)/2)
