@@ -216,7 +216,106 @@ Para ilustrar a técnica, vamos retomar o problema de encontrar simultaneamente 
 
 <strong>Exemplo:</strong> Considere o algoritmo para obter o maior e o menor elemento de um vetor de inteiros v[0..n-1], n>= 1.  <a href="https://github.com/leonardo8787/Algorithms/tree/main/nivio-ziviane-book/2-paradigmas-projeto-algoritmos/codigo/max_mim_recursivo">Clique aqui para ver o código</a>.
 
+Os parâmetros linf e lsup são inteiros, 0<= linf <= lsup <= n-1. O vetor maxMin definido localmente no método maxMin4 é utilizado para retornar nas posições 0 e 1 o maior e o menor elemento do vetor v, respectivamente. O efeito produzido a cada chamada de maxMin4 é o de atribuir as variáveis maxMin[0] e maxMin[1] o maior elemento e o menor elemento em v[linf], v[linf+1], ..., v[lsup], respectivamente.
 
+Seja T(n) uma função de complexidade tal que T(n) é o número de comparações entre os elementos de v, se v contiver n elementos. Logo:
+
+~~~
+T(n)=1,                          para n <= 2,
+T(n)=T([n/2])+T([n/2])+2,        para n > 2.
+~~~
+
+Quando n=2^i, para algum inteiro positivo i, então:
+
+~~~
+colar imagem aqui
+~~~
+
+Adicionando lado a lado, obtemos:
+
+~~~
+colar imagem aqui
+~~~
+
+Logo, T(n)=3n/2-2 para o melhor caso, o pior caso e o caso médio.
+
+De acordo com os métodos vistos anteriormente, o algoritmo anterior é ótimo, tendo o mesmo tipo de comportamento do algoritmo MaxMin3 do programa 1.4. Entretanto, na prática, o algoritmo acima deve ser pior do que os algoritmos MaxMin2 e MaxMin3 dos Programas 1.3 e 1.4, respectivamente, podendo até ser pior do que o algoritmo MaxMin1 do Programa 1.2. Conforme vimos anteriormente, na implementação da versão recursiva, a cada chamada para o método maxMin4 o compilador salva em uma estrutura de dados os valores de linf, lsup, maxMin[0] e maxMin[1], além do endereço de retorno da chamada para o método. Além disso, uma comparação adicional é necessária a cada chamada recursiva para verificar se lsup - linf <= 1. Outra observação relevante sobre a implementação acima é que n deve ser menor do que a metade do maior inteiro que pode ser representado pelo compilador a ser utilizado, porque o comando
+
+~~~
+ meio = (linf + lsup)/2
+~~~
+
+pode provocar overflow na operação linf + lsup.
+
+A técnica divisão e conquista é utilizada para resolver diversos problemas ao longo do livro. Por exemplo, o algoritmo Quicksort para ordenar um conjunto de elementos usa recursividade e divisão e conquista. O Quicksort é um dos algoritmos mais elegantes que existem, além de ser o mais rápido para a maioria das aplicações práticas existentes.
+
+Uma vez que equações de recorrência ocorrem na análise da complexidade de algoritmos recursivos do tipo divisão e conquista, vamos considerar a solução para o caso geral. O teorema apresentado a seguir é denominado teorema mestre em Cormen(2001).
+
+<strong>Teorema Mestre: </strong>Sejam a>=1 e b>1 constantes, f(n) uma funções assintoticamente positiva e T(n) uma medida de complexidade definida sobre os inteiros. A solução da equação de recorrência:
+
+~~~
+ T(n)=aT(n/b)+f(n)
+~~~
+
+para b uma potência de n é:
+
+~~~
+colar imagem aqui
+~~~
+
+Falar mais sobre o teorema mestre aqui...
+
+<h2>Balanceamento</h2>
+
+O exemplo usado para ilustrar a técnica divisão e conquista divide o problema em subproblemas de mesmo tamanho. Este é um aspecto importante no projeto de algoritmos: procurar sempre manter o balanceamento na subdivisão de um problema em partes menores. Cabe ressaltar que divisão e conquista não pe a única técnica em que balanceamento é útil. Para ilustrar o princípio do balanceamento, vamos apresentar um exemplo de ordenação e que o contraste entre o efeito de dividir o problema em subproblemas desiguais e o efeito de dividir em subproblemas iguais fique claro.
+
+Considere novamente o exemplo de problema de ordenação apresentado na página 21. O algoritmo seleciona o menor elemento do conjunto v[0..n-1] e então troca este elemento com o primeiro elemento v[0]. O processo é repetido com os n-1 elementos, resultando no segundo maior elemento, que é repetido com o segundo elemento v[1]. Repetindo o processo para n-2, n-3, ..., 2 ordena a sequência. O algoritmo leva à equação de recorrência:
+
+~~~
+ T(n) = T(n-1)+n-1 , T(1)=0,
+~~~
+
+para o número de comparações realizadas entre os elementos a serem ordenados.
+
+Como vimos anteriormente, um caminho possível para resolver a equação acima é procurar substituir os termos T(k), k<n, no lado direito da equação até que todos os termos T(k), k>1 tenham sido substituídos por fórmulas contendo apenas T(1). No caso da equação acima temos:
+
+~~~
+colar imagem aqui
+~~~
+
+Adicionando lado a lado, obtemos:
+
+~~~
+  T(n) = T(1) + 1 + 2+ ... + n - 1 = n(n-1)/2
+~~~
+
+Logo, o algoritmo é O(n²).
+
+Embora o algoritmo possaser visto como uma aplicação recursiva de divisão e conquista, ele não é eficiente para valores grandes de n. Para se obter um algoritmo de prdenação assintoticamente eficiente, é necessário conseguir um balanceamento. Em vez de dividir um problema de tamanho n em dois subproblemas, um de tamanho 1 e outro de tamanho n-1, o ideal é dividir o problema em dois subproblemas de tamanhos aproximadamente iguais.
+
+<strong>Exemplo:</strong> A operação de unir dois arquivos ordenados gerando um terceiro arquivo ordenado é denominada intercalação (merge). Essa operação consiste em colocar no terceiro arquivo o menor elemento entre os menores dos dois arquivos iniciais, desconsiderando esse mesmo elemento nos passos posteriores. Esse processo deve ser repetido até que todos os elementos dos arquivos de entrada sejam escolhidos.
+
+Essa ideia pode ser utilizada para construir um algoritmo de ordenação. O processo é o seguinte: dividir recursivamente o vetor a ser ordenado em dois vetores até obter n vetores de um único elemento. Aplicar o algoritmo de intercalação tendo como entrada dois vetores de um elemento e formando um vetor ordenado de dois elementos. Repetir esse processo formando vetores ordenados cada vez maiores até que todo o vetor esteja ordenado. Na literatura, esse método é conhecido como <strong>Mergesort.</strong>
+
+Para saber mais sobre mergesort acesse o site: https://www.geeksforgeeks.org/merge-sort/ ou vâ para o diretório que trata sobre estruturas de dados básicas.
+
+O algoritmo mergesort tem O(n*log n).
+
+<h2>Programação Dinâmica</h2>
+
+Recursividade é uma técnica muito útil quando o problmea a ser resolvido pode ser dividido em subproblemas a um custo não muito grande e os subproblemas podem ser mantidos pequenos. Por exemplo, quando a soma dos tamanhos dos subproblemas é O(n), então é possível que o algoritmo recursivo tenha complexidade polinomial. Em contrapartida, quando a divisão de um problema de tamanho n resulta em n subproblemas de tamanho n-1, então é provável que o algoritmo recursivo tenha complexidade exponencial.
+
+Quando o algoritmo recursivo tem complexidade exponencial, a técnica de programação dinâmica pode levar a um algoritmo mais eficiente. A programação dinâmica calcula a solução para todos os subproblemas, partindo dos subproblemas menores para os maiores, armazenando os resultados em uma tabela. A vantagem do método está no fato de que uma vez que um subproblema é resolvido, a resposta é armazenada em uma tabela e o subproblema nunca mais é recalculado.
+
+Aho, Hopcroft e Ullman (1974) ilustram a técnica de programação dinâmica por meio de um exemplo sobre a avaliação do produto de n matrizes
+
+~~~
+  M = M1 * M2 * ... * Mn
+~~~
+
+em que cada Mi é uma matriz com d_i-1 linhas e di colunas. A ordem na qual as matrizes são multiplicadas pode ter um efeito enorme no número total de operações de adição e multiplicação neccessárias para obter M, conforme se verifica no exemplo a seguir.
+
+<strong>Exemplo:</strong> Considere o produto de uma matriz p*q por outra matriz q*r cujo algoritmo requer O(prq) operações. O algoritmo é resolvido <a href="https://github.com/leonardo8787/Algorithms/tree/main/nivio-ziviane-book/2-paradigmas-projeto-algoritmos/codigo/ordem_mult_matriz">aqui</a>.
 
 <h2>Referências</h2>
 
