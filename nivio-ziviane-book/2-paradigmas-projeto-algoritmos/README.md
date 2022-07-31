@@ -317,6 +317,52 @@ em que cada Mi é uma matriz com d_i-1 linhas e di colunas. A ordem na qual as m
 
 <strong>Exemplo:</strong> Considere o produto de uma matriz p*q por outra matriz q*r cujo algoritmo requer O(prq) operações. O algoritmo é resolvido <a href="https://github.com/leonardo8787/Algorithms/tree/main/nivio-ziviane-book/2-paradigmas-projeto-algoritmos/codigo/ordem_mult_matriz">aqui</a>.
 
+<h2>Algoritmos Gulosos</h2>
+
+Algoritmos gulosos são tipicamente usados para resolver problemas de otimização. Um exemplo é o algoritmo para encontrar o caminho mais curto entre dois vértices de um grafo. Um algoritmo guloso escolhe a aresta que parece mais promissora em qualquer instante, e nunca reconsidera essa decisão, independentemente do que possa acontecer mais tarde. Não existe necessidade de avaliar alternativas, nem de empregar algoritmos sofisticados que permitam desfazer decisões tomadas previamente. A razão de o algoritmo ser chamado guloso é que o algoritmo escolhe a cada passo, o caminho mais evidente que possa ser adicionado à solução.
+
+Considere o seguinte problema geral> a partir de um conjunto C deseja-se determinar um subconjunto S que está contido em C tal que (i) S satisfaça uma dada propriedade P, e (ii) S é mínimo (ou máximo) em relação a algum critério alfa. Ou seja, S é o menor (ou maior) subconjunto de C, segundo alfa, que satisfaz P. O algoritmo guloso para resolver o problema geral consiste em um processo iterativo em que S é construído adicionando-se a ele elementos de C um a um.
+
+<strong>Características:<strong>
+
+* Considere um problema em que a solução ótima deve ser obtida. Para construir a solução existe um conjunto ou lista de candidatos, como, por exemplo, as arestas de um grafo que podem ser usadas para construir um caminho.
+  
+* Na medida em que o algoritmo procede, dois outros conjuntos são acumulados. Um contém candidatos que foram considerados e escolhidos, e o outro contém candidatos que foram considerados e rejeitados.
+  
+* Existe uma função que verifica se um conjunto particular de candidatos produz uma solução para o problema, sem considerar questões de <strong>otimalidade</strong> naquele momento. Por exemplo, as arestas selecionadas produzem um caminho para o vértice que deve ser atingido ? 
+  
+* Uma segunda função verifica se um conjunto de candidatos é viável, isto é, se é possível completar o conjunto adicionando mais candidatos de tal forma que pelo menos uma solução possa ser obtida. Aqui também não existe preocupação com a otimalidade.
+  
+* Uma outra função, chamada função de seleção, indica a qualquer momento quais dos candidatos restantes que não foram nem escolhidos nem rejeitados são os mais promissores.
+  
+* Finalmente, uma função objetivo fornece o valor da solução encontrada, como o comprimento do caminho construído. Ao contrário das três funções mencionadas anteriormente, a função objetivo não aparece explicitamente no algoritmo guloso.
+  
+O programa 2.10 apresenta um pseudocódigo de um algoritmo guloso genérico. Inicialmente, o conjunto S de candidatos escolhidos está vazio. A seguir, a cada passo, o melhor candidato estante ainda não tentado é considerado, sendo o critério de escolha ditado pela função de seleção. Se o conjunto aumentado de candidatos se torna inviável, o candidato concorre é rejeitado e nunca mais considerado. Entretanto, se o conjunto aumentado é viável, o candidato é adicionado ao conjunto S de candidatos escolhidos, onde permanece a partir de então. Cada vez que o conjunto S é aumentado ao receber um novo candidato, é nexessário verificar se S constitui uma solução ótima. Quando um algoritmo guloso funciona corretamente, a primeira solução encontrada dessa maneira é sempre ótima. 
+  
+Programa 2.10 Algoritmo guloso Genérico
+~~~
+Conjunto guloso (Conjunto C){
+  S=0;
+  while ((C != 0) && not solução(S)){
+    x=seleciona(C);
+    C=C-x;
+    if (viável(S+x)) S=S+x;
+  }
+  if (solução (S)) return S else return ("Não existe solução");
+}
+~~~
+
+A função de seleção é geralmente relacionada com a função objetivo. Se o objetivo é maximizar o ganho, então provavelmente será escolhido qualquer um dos candidatos restantes que proporcione o maior ganho individual. Se o objetivo é minimizar o custo, então será escolhido o candidato restante de menor custo, e assim por diante. Além disso o algoritmo nunca muda de ideia. Uma vez que um candidato é escolhido e adicionado à solução, ele lá permanece para sempre, e vice-versa.
+  
+<h2>Algoritmos Aproximados</h2>
+  
+Problemas que podem ser resolvidos por algoritmos polinomiais são considerados "fáceis", enquanto problemas que só podem ser resolvidos por algoritmos exponenciais são considerados "difíceis". Problemas considerados difíceis ou intratáveis são muito comuns na natureza e nas diversas áreas do conhecimento. Um exemplo é o problema do caixeiro viajante, cuja complexidade de tempo é O(n!). 
+  
+Diante de um problema difícil é comum remover a exigÊncia de que o algoritmo tenha sempre de obter a solução ótima. Nesse caso, procuramos encontrar uma solução que seja a mais próxima possível da solução ótima. Para problemas deste tipo, existem dois tipos de algoritmos> Heurísticas e algoritmos aproximados.
+ 
+Uma Heurística é um algoritmo que pode produzir um bom resultado, ou até mesmo obter a solução ótima, mas pode também não produzir solução alguma ou uma solução que está distante da solução ótima. 
+  
+Um algoritmo aproximado é um algoritmo que gera soluções aproximadas dentro de um limite para a razão entre a solução ótima e a produzida pelo algoritmo aproximado. O comportamento de algoritmos aproximados é monitorado do ponto de vista da qualidade dos resultados. 
 <h2>Referências</h2>
 
 * Projeto de Algoritmos, Nivio Ziviani.
