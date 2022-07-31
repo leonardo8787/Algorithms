@@ -323,7 +323,7 @@ Algoritmos gulosos são tipicamente usados para resolver problemas de otimizaç�
 
 Considere o seguinte problema geral> a partir de um conjunto C deseja-se determinar um subconjunto S que está contido em C tal que (i) S satisfaça uma dada propriedade P, e (ii) S é mínimo (ou máximo) em relação a algum critério alfa. Ou seja, S é o menor (ou maior) subconjunto de C, segundo alfa, que satisfaz P. O algoritmo guloso para resolver o problema geral consiste em um processo iterativo em que S é construído adicionando-se a ele elementos de C um a um.
 
-<strong>Características:<strong>
+<strong>Características:</strong>
 
 * Considere um problema em que a solução ótima deve ser obtida. Para construir a solução existe um conjunto ou lista de candidatos, como, por exemplo, as arestas de um grafo que podem ser usadas para construir um caminho.
   
