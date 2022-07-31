@@ -210,6 +210,12 @@ O software que resolve o movimento do cavalo pelo tabuleiro é encontrado na pas
 
 <h2>Divisão e Conquista</h2>
 
+O paradigma <strong>divisão e conquista</strong> consiste em dividir o problema a ser resolvido em partes menores, encontrar soluções para as partes e então combinar as soluções obtidas em uma solução global. O uso do paradigma para resolver problemas nos quais os subproblemas são versões menores do problema original geralmente leva a solução eficientes e elegantes, em especial quando é utilizado recursivamente.
+
+Para ilustrar a técnica, vamos retomar o problema de encontrar simultaneamente o maior e o menor elemento de um vetor de inteiros, v[0..n-1], n>=1, apresentando uma versão recursiva para a solução do problema.
+
+<strong>Exemplo:</strong> Considere o algoritmo para obter o maior e o menor elemento de um vetor de inteiros v[0..n-1], n>= 1.  <a href="https://github.com/leonardo8787/Algorithms/tree/main/nivio-ziviane-book/2-paradigmas-projeto-algoritmos/codigo/max_mim_recursivo">Clique aqui para ver o código</a>.
+
 
 
 <h2>Referências</h2>
