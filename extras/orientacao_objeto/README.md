@@ -141,7 +141,7 @@ public float salarioMensal (float desconto) {
 }
 ~~~
 
-<strong>Sobrescrita<strong><p>
+<strong>Sobrescrita</strong><p>
 
 A ocultação de um método de uma classe mais genérica em uma classe mais específica de sobrescrita. Por exemplo, o método imprime da classe Empregado apresentada no Programa 1.8 foi escrito nas classe Gerente e Secretaria. Para sobrescrever um método em uma subclasse é preciso que ele tenha a mesma assinatura na superclasse.
 
