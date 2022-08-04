@@ -178,6 +178,36 @@ public class B {
 
 <h2>Interfaces</h2>
 
+Uma interface em Java é uma classe abstrata que não pode ser instanciada. Os métodos de uma interface devem ser pubic e somente as suas assinaturas são definidas. Uma interface é sempre implementada por outras classes. A interface pode ser utilizada para prover a especificação de um comportamento que seja comum a um conjunto de objetos. Por exemplo, a interface permite que o tipo de chave de um registro seja genérico e possibilite aos usuários dos métodos que manipulem o registro definir o tipo de dados da chave de acordo com suas necessidades.
+
+O programa 1.1 para obter o méximo dee um conjunto de inteiros pode ser alterado para encontrar o máximo de um conjunto de registros contendo uma chave genérica. O programa 1.14 apresenta uma versão generalizada do Programa 1.1. Nota que a comparação entre max e v[i] é realizado pelo método compara, que é quem conhece o tipo de dados da chave de cada registro.
+
+<strong>Programa 1.14</strong> Algoritmo para encontrar o registro de maior chave independente do tipo da chave.
+~~~
+package cap1;
+import java.io.*;
+public class Max{
+ public static Item max(Item v[], int n){
+  Item max = v[0];
+  for(int i=1; i<n; i++) if (max.compara(v[i])<0) max = v[i];
+  return max;
+ }
+}
+~~~
+
+Para permitir a generalização do tipo de dados da chave é necessário criar a interface Item, conforme ilustra o Programa 1.15. A interface Item apresenta a assinatura do método abstrato compara.
+
+<strong>Programa 1.15</strong> Interface para um Item.
+~~~
+package cap1;
+public nterface Item {
+ public int compara(Item it);
+}
+~~~
+
+A interface Item é implementada pela classe MeuItem apresentada no Programa 1.16. É dentro da classe MeuItem que o tipo de dados da chave é definido e que o método compara é implementado. O método compara é utilizado para comparar dois registros a e b, retornando m valor do que zero se a<b, um valor maior do que zero se a>b, e um valor igual a zero se a=b.
+
+<h2>Pacote</h2>
 
 
 
