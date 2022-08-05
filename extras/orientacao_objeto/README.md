@@ -149,7 +149,7 @@ A ocultação de um método de uma classe mais genérica em uma classe mais espe
 
 A classe ContaBancaria tem um método especial denominado construtor, qe é chamado automaticamente sempre que um novo objeto é criado com o comando new. O construtor tem sempre o mesmo nome da classe. No caso do Programa 1.12, o construtor ContaBancaria tem um parâmetro que é usado para realizar o depósito inicial quando a conta é criada.
 
-<h2>Modificadores de Acesso Public, Private, Protected e Static</h2>
+<strong>Modificadores de Acesso Public, Private, Protected e Static</strong>
 
 Os modificadores de acesso quais outros métodos podem ser acessar um campo de dados ou um método. Um campo de dados ou um método que seja precedido pelo modificador private pode ser acessado somente por métodos que fazem parte da mesma classe. No caso do Programa 1.12, o campo de dados saldo não pode ser acessado por comandos de main, porque não é um método da classe ContaBancaria.
 
