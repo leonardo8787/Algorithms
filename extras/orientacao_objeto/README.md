@@ -209,6 +209,34 @@ A interface Item é implementada pela classe MeuItem apresentada no Programa 1.1
 
 <h2>Pacote</h2>
 
+A linguagem Java permite agrupar as classes e as interfaces em pacotes (do ingles package). Os pacotes são convenientes para organizar e separar as classes de um conjunto de programas de outras bibliotecas de classes. O uso de pacotes evita colisões entre nomes de classes desenvolvidas por uma equipe composta por muitos programadores. Para definir o pacote de uma classe ou de uma interface basta utilizar a palavra package seguida pelo nome do pacote. Por exemplo:
+
+~~~
+package cap1;
+~~~
+
+A declaração de um pacote deve ser sempre na primeira linha do arquivo fonte. Neste texto foi adotada a convenção de se definir um pacote para cada capítulo. Quando necessário é possível definir subpacotes separados por ".". Por exemplo, para definir o subpacote arranjo do pacote cap3 fazendo:
+
+~~~
+package cap3.arranjo;
+~~~
+
+A utilização de uma classe definida em outro pacote é realizada através da palavra chave <strong>import</strong>. Por exemplo, para utilizar a estrutura de dados Lista implementada por meio de arranjos utiliza-se o seguinte comando:
+
+~~~
+import cap3.arranjo.Lista;
+~~~
+
+Para utilizar todas as classes de um pacote basta fazer:
+
+~~~
+import cap3.arranjo.*;
+~~~
+
+Também é possível utilizar determinada classe de um pacote sem importá-la. Para isso também basta prefixar o nome da classe com o nome do pacote durante a declaração de uma varíavel. Por exemplo:
+
+<h2>Visibilidade de pacote</h2>
+
 
 
 <h2>Referência</h2>
