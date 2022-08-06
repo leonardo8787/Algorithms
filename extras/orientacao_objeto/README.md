@@ -237,6 +237,81 @@ Também é possível utilizar determinada classe de um pacote sem importá-la. P
 
 <h2>Visibilidade de pacote</h2>
 
+Toda classe pertence a um pacote. Se o comando package não é colocado no código fonte, então Java adiciona as classes daquele código fonte no que é chamado de pacote default. Quando um campo (ou método) de uma classe não é prefixado por nenhum dos modificadores private, protexted ou public, diz-se que o campo (ou método) possui visibilidade default ou de pacote, o que significa que qualquer objeto de uma classe do pacote pode acessar diretamente aquele campo (ou método).
+
+<h2>Classes Internas</h2>
+
+A linguagem Java permite realizar aninhamento de classes, isto é, pode-se declarar uma classe dentro da declaração de outra classe. O programa 1.18 ilustra a declaração da classe Celula, que é interna à classe Lista. Classes internas são muito úteis para evitar conflitos de nomes na implementação de estruturas de dados, como apresentado antes.
+
+<strong>Programa 1.18</strong> Declaração de uma classe interna
+~~~
+public class Lista{
+  
+  private class Celula{
+    
+  }
+}
+~~~
+
+Os campos e métodos declarados na classe externa podem ser diretamente acessados dentro da classe interna, mesmo os declarados como protected ou private. No entanto, o contrário não é verdadeiro. Somente os campos ou métodos públicos da classe interna podem ser acessados na classe externa. As classes externas só podem ser declaradas como públicas ou com visibilidade de pacote (default). Já as classes internas podem também ser qualificadas com os modificadores private, protected e static. O efeito desses modificadores sobre a visibilidade de uma instância da classe interna é o mesmo obtido sobre qualquer atributo da classe externa.
+
+<strong>O objeto this</strong>
+
+Toda instância de uma classe possui uma variável especial chamada this, que contém uma referência para a própria instância. Isso é necessário em algumas situações para resolver questões de ambiguidade. O programa 1.19 ilustra uma situação na qual o uso do objeto this se faz necessário. Note que o parâmetro saldo do método alteraSaldo possui o mesmo nome do campo de instância saldo da classe Conta. Para diferenciá-los é necessário qualificar o campo da instância com o objeto this.
+
+<strong>Exceções</strong>
+
+As exceções são erros ou anomalias que podem ocorrer durante a execução de um programa, tais como a divisão por zero, a indisponibilidade de memória principal
+
+<strong>Programa 1.19</strong> Utilização do objeto this
+~~~
+public class Conta{
+  private double saldo;
+  public void alteraSaldo(double saldo){
+    this.saldo = saldo;
+  }
+}
+~~~
+
+ou a falta de espaço em disco magnético. Uma exceção deve ser obrigatoriamente representada por um objeto de uma subclasse da classe Throwable. A classe Throwable possui duas subclasses diretas: (i) Exception e (ii) Error. A subclasse Exception será muito utilizada nos capítulos a seguir. Uma abordagem simples para tratar uma exceção é exibir uma mensagem relatando o erro ocorrido e retornar para quem chamou ou finalizar o programa, como ilustra o Programa 1.20. O comando try trata uma exceção que tenha sido disparada em seu interior por um comando throw. A exceção é representada por um objeto que representa a exceção e o envia para ser capturado pelo trecho de código que vai tratar a exceção. O comando catch captura a exceção e fornece o tratamento adequado.
+
+<strong>Programa 1.20</strong> Tratamento da exceção no local onde ela ocorre
+~~~
+int divisao(int a, int b){
+  try{
+    if(b==0) throw new Exception ("Divisão por zero");
+    return (a/b);
+  }
+  catch (Exception objeto) {
+    System.out.println("Erro:" + objeto.getMessage());
+    return (0);
+  }
+}
+~~~
+
+Uma abordagem mais elaborada para tratar uma exceção é separar o local onde a exceção é tratada do local onde ela ocorreu. Essa separação é importante pelo fato de que um trecho de código em um nível mais alto pode possuir mais informações para decidir como melhor tratar a exceção. Nesse caso a exceção não é tratada no local onde ela ocorreu, e esse fato é explicitamente indicado pelo comando throws.
+
+<h2>Convenções de Codificação em Java</h2>
+
+A comunidade de programadores Java adota uma convenção de codificação em que os identificadores associados às classes devem iniciar com letra minúscula. Mais detalhes sobre convenção podem ser obtidos por meio do link: http://java.sun.com/docs/codeconv/html/CodeConvTOC.doc.html
+
+<h2>Diferenças emtre Java e C++</h2>
+
+Esta seção não pretende cobrir todas as diferenças entre Java e C++, mas apenas mostrar as principais características que diferenciam a linguagem Java da linguagem C++.
+
+<strong>Ausência de Apontadores</strong>
+
+<strong>Atribuição</strong>
+
+<strong>Alocação Dinâmica de Memória</strong>
+
+<strong>Parâmetros</strong>
+
+<strong>Operador de Igualdade</strong>
+
+<strong>Sobrecarga de Operadores</strong>
+
+<strong>Tipos Primitivos de Dados</strong>
 
 
 <h2>Referência</h2>
