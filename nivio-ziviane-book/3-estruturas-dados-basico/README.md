@@ -45,8 +45,22 @@ Observe que a operação de criar uma lista vazia é implementada utilizando o c
 
 A implementação de listas por meio da arranjos tem como vantagem a economia de memória, pois os apontadores são implícitos nessa estrutura. Como desvantagens citamos: (i) o custo para inserir ou retirar itens da lista, que pode causar um deslocamento de todos os itens, no pior caso; (ii) em aplicações em que não existe previsão sobre o crescimento da lista, a utilização de arranjos pode exigir a realocação de memória. Essa é uma operação de alto custo em termos de tempo e de memória, pois é preciso alocar uma nova área com mais posições do que a atual e copiar todos os itens para ela.
 
+<strong>Implementação de Listas por meio de Estruturas Auto-Referenciadas</strong>
+
 <h2>Pilhas</h2>
 
+<strong>Implementação de Pilhas por meio de Arranjos</strong>
+
+<strong>Implementação de Pilhas por meio de Estruturas Auto-Referenciadas</strong>
+
+
+
 <h2>Filas</h2>
+
+<strong>Implementação de Filas por meio de Arranjos</strong>
+
+<strong>Implementação de Filas por meio de Estruturas Auto-Referenciadas</strong>
+
+
 
 <h2>Referências</h2>
